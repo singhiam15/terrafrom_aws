@@ -1,0 +1,10 @@
+resource "aws_instance" "kr_east" {
+  provider      = aws.aws_us_east_1
+  ami           = "ami-0cff7528ff583bf9a"
+  instance_type = "t2.nano"
+  count         = 7
+  tags = {
+    "Name" = "SuperMan"
+    "Name" = "SuperMan-${count.index+1}"
+  }
+}
